@@ -1,0 +1,10 @@
+.center {
+    display: flex;
+    justify-content: center;
+  }
+
+.crop {
+    width: 500px;
+    height: 200px;
+    object-fit: cover;
+}
