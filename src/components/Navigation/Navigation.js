@@ -12,8 +12,8 @@ const Navigation = () => {
                         modal
                         closeOnDocumentClick>
                         <div>
-                            <div className="pa3 pa5-ns">
-                                <p className="f5 lh-copy measure-wide center">
+                            <div>
+                                <p className="f5 lh-copy center">
                                     My name is Thomas Leasure.  This is my first ReactJS project.
                                     The application you see here is very simple, it calculates the number of years
                                     it will take to pay off an amortization loan.  This application uses some very core

@@ -6,17 +6,13 @@ import Footer from './components/Footer/Footer';
 import Calculation from './components/Calculation/Calculation'
 import './App.css';
 
-const clearForm = {
-  loanAmount: '',
-  monthlyPayment: '',
-  apr: '',
+const clearErrors = {
   loanAmountError: '',
   monthlyPaymentError: '',
   aprError: ''
 }
 
 class App extends Component {
-
   constructor() {
     super();
     this.state = {
@@ -65,6 +61,10 @@ class App extends Component {
       aprError = 'APR cannot be empty.';
     }
 
+    if ((Number(this.state.apr.slice(0, -1)) / 1200) === 0) {
+      aprError = 'APR cannot be zero.';
+    }
+
     if (loanAmountError || monthlyPaymentError || aprError) {
       this.setState({ loanAmountError, monthlyPaymentError, aprError });
       return false;
@@ -83,9 +83,12 @@ class App extends Component {
       let result = Math.round((Math.log(1 + (rate / (payment / (loan) - rate))) / Math.log(1 + rate)) / 12)
       if (isNaN(result)) {
         this.setState({ years: 'Impossible. Infinity ' })
-      } else { this.setState({ years: result }) }
-      this.onRouteChange('home')
-      this.setState(clearForm);
+      }
+      else {
+        this.setState({ years: result });
+        this.onRouteChange('home');
+        this.setState(clearErrors);
+      }
     }
 
   }
