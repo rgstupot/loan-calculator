@@ -18,7 +18,7 @@ const Navigation = () => {
                                     The application you see here is very simple, it calculates the number of years
                                     it will take to pay off an amortization loan.  This application uses some very core
                                     ReactJS concepts including state, multiple components, route, and responsiveness.
-                                    Some intesting NPM modules used in this projects are reactjs-popup, react-number-format,
+                                    Some interesting NPM modules used in this projects are reactjs-popup, react-number-format,
                                     tachyons CSS toolkit, and logos from shopify.  Please feel free to make suggestions and enjoy!
                                 </p>
                             </div>
